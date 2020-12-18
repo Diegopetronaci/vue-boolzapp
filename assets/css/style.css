@@ -37,7 +37,6 @@ body {
   right: 0;
   width: 60%;
   height: 100%;
-  background-color: #080b12ba;
   /* padding: 15px 20px; */
   /* z-index: 1; */
 }
@@ -59,17 +58,75 @@ body {
 .flex_between{
     justify-content: space-between;
 }
+.self_align {
+    align-self: center;
+}
 /* utlity class */
 
 /* area sinistra */
 
-.areaPersonale {
+.areaPersonale, .destinatario {
     height: 70px;
     background-color: #eaeaea;
+    padding-top: 10px;
+}
+.destinatario {
+    border-left: 1px solid lightgray;
+}
+.areaPersonale > div > img, .destinatario > div > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+.icone {
+    line-height: 50px;
+    vertical-align: middle;
+}
+.icone > i {
+    padding: 15px;
+    color:#b1b1b1;
+    font-size: 20px;
+}
+.icone > i:hover {
+    cursor: pointer;
+    color: grey;
 }
 .notifiche {
     height: 100px;
     background-color: #8edafc;
+}
+.tondoBianco {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    align-self: center;
+    margin-left: 15px;
+}
+.tondoBianco > span > i{
+    position: relative;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color:  #8edafc;
+}
+.tondoBianco:hover > span > i {
+    cursor: pointer;
+}
+.scritteNotifiche {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+.scritteNotifiche > h5 {
+    font-size: 17px;
+}
+.scritteNotifiche > a {
+    padding-top: 5px;
+    font-size: 14px;
+    color: #63a4d0;
 }
 .ricerca {
     height: 50px;
@@ -100,6 +157,7 @@ span > input {
     width: 40%;
     height: calc(600px - 220px);
     overflow-y: scroll;
+    background-color: #fafafa;
 }
 .contact {
     width: 100%;
@@ -120,3 +178,48 @@ span > input {
     font-size: 20px;
     margin: 10px;
 }
+/* fine area sinistra */
+.scritteDestinatario {
+    margin: 5px;
+}
+.scritteDestinatario > span{
+    font-size: 21px;
+}
+.scritteDestinatario > p{
+    font-size: 14px;
+    color:rgb(158, 157, 157);
+}
+.sfondoChat {
+    overflow-y: scroll;
+}
+.sfondoChat > img {
+    width: 100%;
+    height: 450px;
+}
+.scriviMessaggio {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 80px;
+    background-color: #eaeaea;
+    padding: 0 20px;
+}
+.scriviMessaggio > input {
+    width: 85%;
+    height: 50%;
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.scriviMessaggio > i {
+    font-size: 25px;
+    color:  #b6b9bc;
+}
+.scriviMessaggio > i:hover {
+    cursor: pointer;
+    color: grey;
+}
+/* inizio area destra */
+
+/* fine area destra */
