@@ -40,9 +40,9 @@
                         </div>
                     </div>
                     <div class="contatti">
-                        <div class="d_flex contact">
+                        <div class="d_flex contact" v-for="name, index in contacts">
                             <img src="./assets/img/avatar_1.jpg" alt="">
-                            <span> Michele </span>
+                            <span> {{name}} </span>
                         </div>
                     </div>
                     
@@ -70,7 +70,7 @@
                     <div class="scriviMessaggio d_flex flex_around">
                         <i class="far fa-smile self_align"></i>
                         <input class="self_align" type="text" placeholder="Scrivi un messaggio">
-                        <i class="fas fa-microphone self_align">
+                        <i class="fas fa-microphone self_align"></i>
                     </div>
                 </div>
                 <!-- fine parte destra del sito boolzap -->
