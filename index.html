@@ -40,9 +40,9 @@
                         </div>
                     </div>
                     <div class="contatti">
-                        <div class="d_flex contact" v-for="name, index in contacts">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
-                            <span> {{name}} </span>
+                        <div class="d_flex contact" v-for="contatto,index in contacts">
+                            <img :src="contatto.avatar" @click="selezionaChatUtente()">
+                            <span> {{contatto.name}} </span>
                         </div>
                     </div>
                     
@@ -51,10 +51,10 @@
                 <!-- parte destra del sito boolzap -->
                 <div class="right">
                     <div class="destinatario d_flex flex_between">
-                        <div class="d_flex">
-                            <img src="./assets/img/avatar_1.jpg" alt="">
+                        <div class="d_flex" >
+                            <img src="./assets/img/avatar_1.jpg">
                             <div class="scritteDestinatario">
-                                <span>Nome Destinatario</span>
+                                <span>Nome Destinatario cliccato</span>
                                 <p>Ultimo Accesso oggi alle </p>
                             </div>
                         </div>

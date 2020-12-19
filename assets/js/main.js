@@ -3,7 +3,7 @@
 //dall’utente (verdi) edall’interlocutore (bianco) assegnando
 //due classi CSS diverse
 //Visualizzazione dinamica della lista contatti:​
-//tramite la direttiva v-for, visualizzarenome e immagine di ogni contatto
+//tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 
 let boolzap = new Vue({
     el: "#app",
@@ -11,7 +11,7 @@ let boolzap = new Vue({
         contacts: [
             {
                 name: 'Michele',
-                avatar: '_1',
+                avatar: './assets/img/avatar_1.jpg',
                 visible: true,
                 messages: [
                     {
@@ -31,9 +31,10 @@ let boolzap = new Vue({
                     },
                 ],
             },
+            
             {
                 name: 'Fabio',
-                avatar: '_2',
+                avatar: './assets/img/avatar_2.jpg',
                 visible: true,
                 messages: [
                     {
@@ -54,7 +55,7 @@ let boolzap = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: './assets/img/avatar_3.jpg',
                 visible: true,
                 messages: [
                     {
@@ -76,7 +77,7 @@ let boolzap = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: './assets/img/avatar_4.jpg',
                 visible: true,
                 messages: [
                     {
@@ -91,6 +92,11 @@ let boolzap = new Vue({
                     }
                 ],
             },
-        ]   
+        ] 
+    },
+    methods: {
+        selezionaChatUtente () {
+            
+        }
     }
 });
