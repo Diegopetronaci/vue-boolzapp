@@ -122,8 +122,15 @@ let boolzap = new Vue({
         //l’utente riceveràun “ok” come risposta,
         //che apparirà dopo 1 secondo.
 
-        inserisciMessaggio() {
-            
+        inserisciMessaggio(index) {
+            let messaggio = {
+                date: '10/01/2020 15:30:55',
+                text: this.frase,
+                status: 'sent'
+            }
+            this.contacts[index].messages.push(messaggio);
+            this.frase = "";
+            console.log(this.contacts[index].messages,index); 
         }
 
 
