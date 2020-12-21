@@ -110,8 +110,6 @@ let boolzap = new Vue({
         selezionaUtente(index) {
             this.activeIndex = index;
         },
-        selezionaChat(index) {
-            
-        },
+        
     }
 });
