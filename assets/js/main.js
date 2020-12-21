@@ -8,6 +8,10 @@
 let boolzap = new Vue({
     el: "#app",
     data: {
+        nomeUtente: "Michele",
+        messaggiCorrenti: [""],
+        imgCorrente: "./assets/img/avatar_1.jpg",
+        dataCorrente: "10/01/2020 16:15:22",
         contacts: [
             {
                 name: 'Michele',
@@ -35,7 +39,7 @@ let boolzap = new Vue({
             {
                 name: 'Fabio',
                 avatar: './assets/img/avatar_2.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -56,7 +60,7 @@ let boolzap = new Vue({
             {
                 name: 'Samuele',
                 avatar: './assets/img/avatar_3.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -78,7 +82,7 @@ let boolzap = new Vue({
             {
                 name: 'Luisa',
                 avatar: './assets/img/avatar_4.jpg',
-                visible: true,
+                visible: false,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -92,11 +96,28 @@ let boolzap = new Vue({
                     }
                 ],
             },
-        ] 
+        ],
     },
+    //Milestone 2
+    //Visualizzazione dinamica dei messaggi: 
+    //tramite la direttiva v-for,
+    //visualizzare tutti i messaggi relativi al contatto
+    //attivo all’interno del pannello della conversazione
+    //Click sul contatto​ mostra la conversazione
+    //del contatto cliccato
     methods: {
-        selezionaChatUtente () {
-            
+        selezionaChat(index) {
+            /* if (this.contacts[index].visible) {      //se true
+                this.contacts[index].visible = "false";
+            } else if (this.contacts[index].visible == "false"){
+                this.contacts[index].visible = "true";
+            } */
+        },
+        selezionaUtente(index) {
+            this.nomeUtente = this.contacts[index].name;
+            this.imgCorrente = this.contacts[index].avatar;
+            this.dataCorrente = this.contacts[index].messages[index].date;
+            console.log(this.dataCorrente);
         }
     }
 });

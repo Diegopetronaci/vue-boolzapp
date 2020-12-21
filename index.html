@@ -40,8 +40,8 @@
                         </div>
                     </div>
                     <div class="contatti">
-                        <div class="d_flex contact" v-for="contatto,index in contacts">
-                            <img :src="contatto.avatar" @click="selezionaChatUtente()">
+                        <div class="d_flex contact" v-for="(contatto,index) in contacts" @click="selezionaUtente(index)">
+                            <img :src="contatto.avatar">
                             <span> {{contatto.name}} </span>
                         </div>
                     </div>
@@ -52,10 +52,10 @@
                 <div class="right">
                     <div class="destinatario d_flex flex_between">
                         <div class="d_flex" >
-                            <img src="./assets/img/avatar_1.jpg">
+                            <img :src="imgCorrente">
                             <div class="scritteDestinatario">
-                                <span>Nome Destinatario cliccato</span>
-                                <p>Ultimo Accesso oggi alle </p>
+                                <span>{{nomeUtente}}</span>
+                                <p>Ultimo Accesso oggi alle {{dataCorrente}}</p>
                             </div>
                         </div>
                         <div class="icone d-flex flex_between">
@@ -65,7 +65,14 @@
                         </div>
                     </div>
                     <div class="sfondoChat">
-                        <img src="./assets/img/sfondo.jpg" alt="">
+                        <!-- <img src="./assets/img/sfondo.jpg" alt=""> -->
+                        <div class="containerChat">
+                            <div v-for="(messaggio,index) in contacts">
+                                <div class="riquadroText" v-for="(mess,posizione) in contacts[index].messages" v-if="contacts[index].visible">
+                                    {{mess.text}}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="scriviMessaggio d_flex flex_around">
                         <i class="far fa-smile self_align"></i>
