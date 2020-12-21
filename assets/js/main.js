@@ -9,6 +9,7 @@ let boolzap = new Vue({
     el: "#app",
     data: {
         activeIndex: 0,
+        frase: "",
         /* nomeUtente: "Michele",
         messaggiCorrenti: [],
         imgCorrente: "./assets/img/avatar_1.jpg",
@@ -99,17 +100,32 @@ let boolzap = new Vue({
             
         ],
     },
-    //Milestone 2
-    //Visualizzazione dinamica dei messaggi: 
-    //tramite la direttiva v-for,
-    //visualizzare tutti i messaggi relativi al contatto
-    //attivo all’interno del pannello della conversazione
-    //Click sul contatto​ mostra la conversazione
-    //del contatto cliccato
+    
     methods: {
+        //Milestone 2
+        //Visualizzazione dinamica dei messaggi: 
+        //tramite la direttiva v-for,
+        //visualizzare tutti i messaggi relativi al contatto
+        //attivo all’interno del pannello della conversazione
+        //Click sul contatto​ mostra la conversazione
+        //del contatto cliccato
         selezionaUtente(index) {
             this.activeIndex = index;
         },
-        
+
+        //Milestone 3
+        //Aggiunta di un messaggio:
+        //l’utente scrive un testo nella parte bassa
+        //e digitando“enter” il testo viene aggiunto al
+        //thread sopra, come messaggio verde●Risposta
+        //dall’interlocutore: ad ogni inserimento di un messaggio,
+        //l’utente riceveràun “ok” come risposta,
+        //che apparirà dopo 1 secondo.
+
+        inserisciMessaggio() {
+            
+        }
+
+
     }
 });

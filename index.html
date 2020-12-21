@@ -81,7 +81,7 @@
                     </div>
                     <div class="scriviMessaggio d_flex flex_around">
                         <i class="far fa-smile self_align"></i>
-                        <input class="self_align" type="text" placeholder="Scrivi un messaggio">
+                        <input class="self_align" type="text" placeholder="Scrivi un messaggio" v-model="frase" @keyup.enter="inserisciMessaggio">
                         <i class="fas fa-microphone self_align"></i>
                     </div>
                 </div>
