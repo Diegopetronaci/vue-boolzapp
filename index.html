@@ -40,9 +40,11 @@
                         </div>
                     </div>
                     <div class="contatti">
-                        <div class="d_flex contact" v-for="(contatto,index) in contacts" @click="selezionaUtente(index)">
-                            <img :src="contatto.avatar">
-                            <span> {{contatto.name}} </span>
+                        <div v-for="(contatto,index) in contacts">
+                            <div class="d_flex contact" @click="selezionaUtente(index)">
+                                <img :src="contatto.avatar">
+                                <span> {{contatto.name}} </span>
+                            </div>
                         </div>   
                     </div>
                     
@@ -52,10 +54,10 @@
                 <div class="right">
                     <div class="destinatario d_flex flex_between">
                         <div class="d_flex" >
-                            <img :src="imgCorrente">
+                            <img :src="contacts[activeIndex].avatar">
                             <div class="scritteDestinatario">
-                                <span>{{nomeUtente}}</span>
-                                <p>Ultimo Accesso oggi alle {{dataCorrente}}</p>
+                                <span>{{contacts[activeIndex].name}}</span>
+                                <p>Ultimo Accesso oggi alle </p>
                             </div>
                         </div>
                         <div class="icone d-flex flex_between">
@@ -67,10 +69,13 @@
                     <div class="sfondoChat">
                         <!-- <img src="./assets/img/sfondo.jpg" alt=""> -->
                         <div class="containerChat">
-                            <div v-for="(messaggio,index) in contacts">
+                            <!-- <div v-for="contatto,index in contacts">
                                 <div class="riquadroText" v-for="(mess,posizione) in contacts[index].messages" v-if="contacts[index].visible">
                                     {{mess.text}}
                                 </div>
+                            </div> -->
+                            <div class="riquadroText" v-for="messaggio,index in contacts[activeIndex].messages">
+                                {{messaggio.text}}
                             </div>
                         </div>
                     </div>

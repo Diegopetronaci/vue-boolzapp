@@ -8,10 +8,11 @@
 let boolzap = new Vue({
     el: "#app",
     data: {
-        nomeUtente: "Michele",
+        activeIndex: 0,
+        /* nomeUtente: "Michele",
         messaggiCorrenti: [],
         imgCorrente: "./assets/img/avatar_1.jpg",
-        dataCorrente: "10/01/2020 16:15:22",
+        dataCorrente: "10/01/2020 16:15:22", */
         contacts: [
             {
                 name: 'Michele',
@@ -106,20 +107,11 @@ let boolzap = new Vue({
     //Click sul contatto​ mostra la conversazione
     //del contatto cliccato
     methods: {
-        /* selezionaChat(index) {
-            if (this.contacts[index].visible) {      //se true
-                this.contacts[index].visible = "false";
-            } else if (this.contacts[index].visible == "false"){
-                this.contacts[index].visible = "true";
-            }
-            
-        }, */
         selezionaUtente(index) {
-            this.nomeUtente = this.contacts[index].name;
-            this.imgCorrente = this.contacts[index].avatar;
-            this.dataCorrente = this.contacts[index].messages[index].date;
-            console.log(this.dataCorrente);
+            this.activeIndex = index;
+        },
+        selezionaChat(index) {
             
-        }
+        },
     }
 });
