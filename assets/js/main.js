@@ -124,13 +124,13 @@ let boolzap = new Vue({
 
         inserisciMessaggio(index) {
             let messaggio = {
-                date: '10/01/2020 15:30:55',
+                date: new Date().toLocaleString(),
                 text: this.frase,
                 status: 'sent'
             }
             this.contacts[index].messages.push(messaggio);
             this.frase = "";
-            console.log(this.contacts[index].messages,index); 
+            console.log(this.contacts[index].messages,index);
         }
 
 

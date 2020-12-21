@@ -214,6 +214,16 @@ span > input {
     margin: 15px 15px;
 
 }
+.messaggioText {
+    padding: 10px;
+    font-size: 17px;
+}
+.messaggioData {
+    font-size: 12px;
+    color: grey;
+    display: flex;
+    flex-direction: row-reverse;
+}
 .scriviMessaggio {
     position: fixed;
     bottom: 0;

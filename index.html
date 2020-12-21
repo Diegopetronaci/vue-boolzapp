@@ -74,8 +74,11 @@
                                     {{mess.text}}
                                 </div>
                             </div> -->
-                            <div class="riquadroText" v-for="messaggio,index in contacts[activeIndex].messages">
-                                {{messaggio.text}}
+                            <div class="">
+                                <div class="riquadroText" v-for="messaggio,index in contacts[activeIndex].messages">
+                                    <div class="messaggioText">{{messaggio.text}}</div>
+                                    <div class="messaggioData">{{messaggio.date}}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
