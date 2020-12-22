@@ -36,7 +36,9 @@
                     <div class="ricerca">
                         <div class="search">
                             <span><i class="fas fa-search"></i></span>
-                            <span><input type="text" placeholder="Cerca o inizia una nuova chat"></span>
+                            <span>
+                                <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat">
+                            </span>
                         </div>
                     </div>
                     <div class="contatti">
@@ -57,7 +59,7 @@
                             <img :src="contacts[activeIndex].avatar">
                             <div class="scritteDestinatario">
                                 <span>{{contacts[activeIndex].name}}</span>
-                                <p>Ultimo Accesso oggi alle {{lastData}}</p>
+                                <p>Ultimo Accesso oggi alle {{contacts[activeIndex].messages[contacts[activeIndex].messages.length -1].date}}</p>
                             </div>
                         </div>
                         <div class="icone d-flex flex_between">

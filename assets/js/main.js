@@ -10,7 +10,7 @@ let boolzap = new Vue({
     data: {
         activeIndex: 0,
         frase: "",
-        lastData: "",
+        search: "",
         /* status: "", */
         /* sent:".inviato",
         received:".ricevuto", */
@@ -138,15 +138,34 @@ let boolzap = new Vue({
             console.log(this.contacts[index].messages,index);
             
             setTimeout( () => {
-                let newMessaggio = {
+                newMessaggio = {
                     date: new Date().toLocaleString(),
                     text: "Ok",
                     status: 'received'
                 }
                 this.contacts[index].messages.push(newMessaggio);   
             }, 1000);
+
         },
 
-    }
+        //Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
+        //vengono visualizzati solo i contatti il cui nome contiene le
+        //lettere inserite(es, Marco, Matteo Martina -> Scrivo“mar”
+        //rimangono solo Marco e Martina)
+
+        cercaUtenti () {
+            
+        }
+    },
+    /* computed: {
+        
+        filteredList() {
+            return this.contacts.filter(nome => {
+                return nome.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+        }
+        
+         
+    }*/
 });
 
