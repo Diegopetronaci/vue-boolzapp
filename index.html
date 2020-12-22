@@ -75,7 +75,7 @@
                                 </div>
                             </div> -->
                             <div class="">
-                                <div class="riquadroText" v-for="messaggio,index in contacts[activeIndex].messages" :class="(messaggio.status == 'received') ? received : sent">
+                                <div v-for="messaggio,index in contacts[activeIndex].messages" :class="'riquadroText ' + ((messaggio.status == 'received') ? 'ricevuto' : 'inviato')">
                                     <div class="messaggioText">{{messaggio.text}}</div>
                                     <div class="messaggioData">{{messaggio.date}}</div>
                                 </div>
