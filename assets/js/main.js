@@ -10,6 +10,9 @@ let boolzap = new Vue({
     data: {
         activeIndex: 0,
         frase: "",
+        status: "",
+        sent:".inviato",
+        received:".ricevuto",
         /* nomeUtente: "Michele",
         messaggiCorrenti: [],
         imgCorrente: "./assets/img/avatar_1.jpg",
@@ -131,8 +134,25 @@ let boolzap = new Vue({
             this.contacts[index].messages.push(messaggio);
             this.frase = "";
             console.log(this.contacts[index].messages,index);
-        }
 
-
+            
+            setTimeout(function (index) { 
+                let newMessaggio = {
+                    date: new Date().toLocaleString(),
+                    text: "ok",
+                    status: 'received'
+                }
+                this.contacts[index].messages.push(newMessaggio);
+            }, 1000);
+            
+        },
+        /* controlloStatus(index) {
+            if (this.contacts[index].messages.status == "sent") {
+                this.contacts[index].messages.status;
+                this.frase = "";
+            } else {
+                
+            }
+        } */
     }
 });
