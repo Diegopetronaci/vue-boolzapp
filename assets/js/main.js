@@ -10,10 +10,11 @@ let boolzap = new Vue({
     data: {
         activeIndex: 0,
         frase: "",
-        status: "",
+        lastData: "",
+        /* status: "", */
         /* sent:".inviato",
         received:".ricevuto", */
-        
+
         /* nomeUtente: "Michele",
         messaggiCorrenti: [],
         imgCorrente: "./assets/img/avatar_1.jpg",
@@ -136,32 +137,16 @@ let boolzap = new Vue({
             this.frase = "";
             console.log(this.contacts[index].messages,index);
             
-            /* setTimeout(function () {
+            setTimeout( () => {
                 let newMessaggio = {
                     date: new Date().toLocaleString(),
-                    text: "ok",
+                    text: "Ok",
                     status: 'received'
                 }
-                this.contacts[index].messages.push(newMessaggio);
-            }, 1000); */
-            console.log(rispostaAutomatica());
+                this.contacts[index].messages.push(newMessaggio);   
+            }, 1000);
         },
 
-        rispostaAutomatica() {            
-            let newMessaggio = {
-                date: new Date().toLocaleString(),
-                text: "ok",
-                status: 'received'
-            }
-            this.contacts[index].messages.push(newMessaggio);            
-        },
-        /* controlloStatus(index) {
-            if (this.contacts[index].messages.status == "sent") {
-                this.contacts[index].messages.status;
-                this.frase = "";
-            } else {
-                
-            }
-        } */
     }
 });
+
