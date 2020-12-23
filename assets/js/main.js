@@ -157,15 +157,15 @@ let boolzap = new Vue({
             
         }
     },
-    /* computed: {
+    computed: {
         
         filteredList() {
-            return this.contacts.filter(nome => {
-                return nome.name.toLowerCase().includes(this.search.toLowerCase())
+            return this.contacts.filter(element => {
+                return element.name.toLowerCase().includes(this.search.toLowerCase())
             })
         }
         
          
-    }*/
+    }
 });
 

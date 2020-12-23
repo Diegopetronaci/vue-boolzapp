@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="contatti">
-                        <div v-for="(contatto,index) in contacts">
+                        <div v-for="(contatto,index) in filteredList">
                             <div class="d_flex contact" @click="selezionaUtente(index)">
                                 <img :src="contatto.avatar">
                                 <span> {{contatto.name}} </span>
