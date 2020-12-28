@@ -206,13 +206,10 @@ span > input {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.riquadroText{
-    /* width:200px;
-    height:100px; */
+/* .riquadroText{
     max-width: 45%;
     border-radius: 5px;
     margin: 15px 15px;
-
 }
 .inviato {
     position: relative;
@@ -223,10 +220,28 @@ span > input {
 .ricevuto {
     text-align: start;
     background-color: white;
+} */
+.sfondoMessaggio{
+    display: flex;
 }
-.messaggioText {
+.inviato {
+    justify-content: end;
+}
+.ricevuto {
+    justify-content: start;
+}
+.messaggioText{
+    background-color: white;
+    margin: 15px;
     padding: 10px;
     font-size: 17px;
+    border-radius: 5px;
+}
+.bg_white{
+    background-color: white;;
+}
+.bg_green{
+    background-color: #d5f9ba;
 }
 .messaggioData {
     display: flex;

@@ -77,9 +77,13 @@
                                 </div>
                             </div> -->
                             <div class="">
-                                <div v-for="messaggio,index in contacts[activeIndex].messages" :class="'riquadroText ' + ((messaggio.status == 'received') ? 'ricevuto' : 'inviato')">
-                                    <div class="messaggioText">{{messaggio.text}}</div>
-                                    <div class="messaggioData">{{messaggio.date}}</div>
+                                <div v-for="messaggio,index in contacts[activeIndex].messages" >
+                                    <div :class="'sfondoMessaggio ' + ((messaggio.status == 'received') ? 'ricevuto' : 'inviato')">
+                                        <span :class="'messaggioText ' + ((messaggio.status == 'received') ? 'bg_white' : 'bg_green')">
+                                            {{messaggio.text}}
+                                            <div class="messaggioData">{{messaggio.date}}</div>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
