@@ -242,6 +242,8 @@ span > input {
 }
 .bg_green{
     background-color: #d5f9ba;
+    text-align: end;
+    max-width: 500px;
 }
 .messaggioData {
     display: flex;

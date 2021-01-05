@@ -80,7 +80,7 @@
                                 <div v-for="messaggio,index in contacts[activeIndex].messages" >
                                     <div :class="'sfondoMessaggio ' + ((messaggio.status == 'received') ? 'ricevuto' : 'inviato')">
                                         <span :class="'messaggioText ' + ((messaggio.status == 'received') ? 'bg_white' : 'bg_green')">
-                                            {{messaggio.text}}
+                                            <p>{{messaggio.text}}</p>
                                             <div class="messaggioData">{{messaggio.date}}</div>
                                         </span>
                                     </div>
