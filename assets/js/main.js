@@ -19,10 +19,14 @@ let boolzap = new Vue({
         messaggiCorrenti: [],
         imgCorrente: "./assets/img/avatar_1.jpg",
         dataCorrente: "10/01/2020 16:15:22", */
+        user: {
+                name: "Nome Utente",
+                avatar: "_io"
+        },
         contacts: [
             {
                 name: 'Michele',
-                avatar: './assets/img/avatar_1.jpg',
+                avatar: '_1',
                 visible: true,
                 messages: [
                     {
@@ -44,7 +48,7 @@ let boolzap = new Vue({
             },   
             {
                 name: 'Fabio',
-                avatar: './assets/img/avatar_2.jpg',
+                avatar: '_2',
                 visible: false,
                 messages: [
                     {
@@ -65,7 +69,7 @@ let boolzap = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: './assets/img/avatar_3.jpg',
+                avatar: '_3',
                 visible: false,
                 messages: [
                     {
@@ -87,7 +91,7 @@ let boolzap = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: './assets/img/avatar_4.jpg',
+                avatar: '_4',
                 visible: false,
                 messages: [
                     {

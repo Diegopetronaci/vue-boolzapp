@@ -15,7 +15,7 @@
                 <div class="left">
                     <div class="areaPersonale d_flex flex_between">
                         <div>
-                            <img src="./assets/img/avatar_io.jpg" alt="">
+                            <img :src="'./assets/img/avatar'+ user.avatar +'.jpg'" alt="">
                             <span>Nome Utente</span>
                         </div>
                         <div class="icone d-flex flex_between">
@@ -44,7 +44,7 @@
                     <div class="contatti">
                         <div v-for="(contatto,index) in filteredList">
                             <div class="d_flex contact" @click="selezionaUtente(index)">
-                                <img :src="contatto.avatar">
+                                <img :src="'./assets/img/avatar' + contatto.avatar + '.jpg'">
                                 <span> {{contatto.name}} </span>
                             </div>
                         </div>   
@@ -56,7 +56,7 @@
                 <div class="right">
                     <div class="destinatario d_flex flex_between">
                         <div class="d_flex" >
-                            <img :src="contacts[activeIndex].avatar">
+                            <img :src="'./assets/img/avatar' + contacts[activeIndex].avatar + '.jpg'">
                             <div class="scritteDestinatario">
                                 <span>{{contacts[activeIndex].name}}</span>
                                 <p>Ultimo Accesso oggi alle {{contacts[activeIndex].messages[contacts[activeIndex].messages.length -1].date}}</p>

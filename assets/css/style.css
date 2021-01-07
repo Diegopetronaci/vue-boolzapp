@@ -164,6 +164,9 @@ span > input {
     height: 75px;
     margin-bottom: 10px;
 }
+.contatti .contact:not(:last-child) {
+    border-bottom: 1px solid black;       
+}
 .contact:hover {
     cursor: pointer;
     background-color: lightgrey;
