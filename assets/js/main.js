@@ -121,6 +121,7 @@ let boolzap = new Vue({
         selezionaUtente(index) {
             this.activeIndex = index;
         },
+        
 
         //Milestone 3
         //Aggiunta di un messaggio:
@@ -137,7 +138,7 @@ let boolzap = new Vue({
                 text: this.frase,
                 status: 'sent'
             }
-            this.contacts[index].messages.push(messaggio);
+            this.filteredList[index].messages.push(messaggio);
             this.frase = "";
             console.log(this.contacts[index].messages,index);
             
@@ -147,7 +148,7 @@ let boolzap = new Vue({
                     text: "Ok",
                     status: 'received'
                 }
-                this.contacts[index].messages.push(newMessaggio);   
+                this.filteredList[index].messages.push(newMessaggio);   
             }, 1000);
 
         },

@@ -56,10 +56,11 @@
                 <div class="right">
                     <div class="destinatario d_flex flex_between">
                         <div class="d_flex" >
-                            <img :src="'./assets/img/avatar' + contacts[activeIndex].avatar + '.jpg'">
+                            <img :src="'./assets/img/avatar' + filteredList[activeIndex].avatar + '.jpg'">
                             <div class="scritteDestinatario">
-                                <span>{{contacts[activeIndex].name}}</span>
-                                <p>Ultimo Accesso oggi alle {{contacts[activeIndex].messages[contacts[activeIndex].messages.length -1].date}}</p>
+                                <span>{{filteredList[activeIndex].name}}</span>
+                                <!-- <p>Ultimo Accesso oggi alle {{filteredList[activeIndex].messages[filteredList[activeIndex].messages.length -1].date}}</p> -->
+                                <p>Ultimo Accesso oggi alle {{(filteredList[activeIndex].messages[filteredList[activeIndex].messages.length-1].status== "received") ? filteredList[activeIndex].messages[filteredList[activeIndex].messages.length -1].date : filteredList[activeIndex].messages[filteredList[activeIndex].messages.length -2].date}}</p>                               
                             </div>
                         </div>
                         <div class="icone d-flex flex_between">
@@ -76,8 +77,8 @@
                                     {{mess.text}}
                                 </div>
                             </div> -->
-                            <div class="">
-                                <div v-for="messaggio,index in contacts[activeIndex].messages" >
+                            <div>
+                                <div v-for="messaggio,index in filteredList[activeIndex].messages" >
                                     <div :class="'sfondoMessaggio ' + ((messaggio.status == 'received') ? 'ricevuto' : 'inviato')">
                                         <span :class="'messaggioText ' + ((messaggio.status == 'received') ? 'bg_white' : 'bg_green')">
                                             <p>{{messaggio.text}}</p>
