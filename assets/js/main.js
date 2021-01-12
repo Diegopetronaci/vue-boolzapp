@@ -118,8 +118,9 @@ let boolzap = new Vue({
         //attivo all’interno del pannello della conversazione
         //Click sul contatto​ mostra la conversazione
         //del contatto cliccato
-        selezionaUtente(index) {
-            this.activeIndex = index;
+        selezionaUtente(contatto) {
+            console.log(contatto);
+            this.activeIndex = this.contacts.indexOf(contatto);
         },
         
 
@@ -132,15 +133,15 @@ let boolzap = new Vue({
         //l’utente riceveràun “ok” come risposta,
         //che apparirà dopo 1 secondo.
 
-        inserisciMessaggio(index) {
+        inserisciMessaggio() {
             let messaggio = {
                 date: new Date().toLocaleString(),
                 text: this.frase,
                 status: 'sent'
             }
-            this.filteredList[index].messages.push(messaggio);
+            this.contacts[this.activeIndex].messages.push(messaggio);
             this.frase = "";
-            console.log(this.contacts[index].messages,index);
+            /* console.log(this.contacts[index].messages,index); */
             
             setTimeout( () => {
                 newMessaggio = {
@@ -148,7 +149,7 @@ let boolzap = new Vue({
                     text: "Ok",
                     status: 'received'
                 }
-                this.filteredList[index].messages.push(newMessaggio);   
+                this.contacts[this.activeIndex].messages.push(newMessaggio);   
             }, 1000);
 
         },
@@ -166,6 +167,7 @@ let boolzap = new Vue({
         
         filteredList() {
             return this.contacts.filter(element => {
+                console.log(element);
                 return element.name.toLowerCase().includes(this.search.toLowerCase())
             })
         }

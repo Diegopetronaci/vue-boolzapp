@@ -43,7 +43,7 @@
                     </div>
                     <div class="contatti">
                         <div v-for="(contatto,index) in filteredList">
-                            <div class="d_flex contact" @click="selezionaUtente(index)">
+                            <div class="d_flex contact" @click="selezionaUtente(contatto)">
                                 <img :src="'./assets/img/avatar' + contatto.avatar + '.jpg'">
                                 <span> {{contatto.name}} </span>
                             </div>
@@ -56,11 +56,11 @@
                 <div class="right">
                     <div class="destinatario d_flex flex_between">
                         <div class="d_flex" >
-                            <img :src="'./assets/img/avatar' + filteredList[activeIndex].avatar + '.jpg'">
+                            <img :src="'./assets/img/avatar' + contacts[activeIndex].avatar + '.jpg'">
                             <div class="scritteDestinatario">
-                                <span>{{filteredList[activeIndex].name}}</span>
+                                <span>{{contacts[activeIndex].name}}</span>
                                 <!-- <p>Ultimo Accesso oggi alle {{filteredList[activeIndex].messages[filteredList[activeIndex].messages.length -1].date}}</p> -->
-                                <p>Ultimo Accesso oggi alle {{(filteredList[activeIndex].messages[filteredList[activeIndex].messages.length-1].status== "received") ? filteredList[activeIndex].messages[filteredList[activeIndex].messages.length -1].date : filteredList[activeIndex].messages[filteredList[activeIndex].messages.length -2].date}}</p>                               
+                                <p>Ultimo Accesso oggi alle {{(contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].status== "received") ? contacts[activeIndex].messages[contacts[activeIndex].messages.length -1].date : contacts[activeIndex].messages[contacts[activeIndex].messages.length -2].date}}</p>                               
                             </div>
                         </div>
                         <div class="icone d-flex flex_between">
@@ -78,7 +78,7 @@
                                 </div>
                             </div> -->
                             <div>
-                                <div v-for="messaggio,index in filteredList[activeIndex].messages" >
+                                <div v-for="messaggio,index in contacts[activeIndex].messages" >
                                     <div :class="'sfondoMessaggio ' + ((messaggio.status == 'received') ? 'ricevuto' : 'inviato')">
                                         <span :class="'messaggioText ' + ((messaggio.status == 'received') ? 'bg_white' : 'bg_green')">
                                             <p>{{messaggio.text}}</p>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="scriviMessaggio d_flex flex_around">
                         <i class="far fa-smile self_align"></i>
-                        <input class="self_align" type="text" placeholder="Scrivi un messaggio" v-model="frase" @keyup.enter="inserisciMessaggio(activeIndex)">
+                        <input class="self_align" type="text" placeholder="Scrivi un messaggio" v-model="frase" @keyup.enter="inserisciMessaggio()">
                         <i class="fas fa-microphone self_align"></i>
                     </div>
                 </div>
